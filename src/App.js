@@ -4,6 +4,7 @@ import "./css/layout.css";
 import RegisterScreen from "./components/RegisterScreen";
 import LoginScreen from "./components/LoginScreen";
 import HomeScreen from "./components/HomeScreen";
+import Navbar from "./components/Navbar";
 
 export default class App extends Component {
   constructor() {
@@ -13,8 +14,20 @@ export default class App extends Component {
     };
   }
 
-  render() {
-    switch (this.state.currentScreen) {
+  goRegister = () => {
+    this.setState({ currentScreen: "RegisterScreen" });
+  };
+
+  goLogin = () => {
+    this.setState({ currentScreen: "LoginScreen" });
+  };
+
+  goHome = () => {
+    this.setState({ currentScreen: "HomeScreen" });
+  };
+
+  renderSwitch = screen => {
+    switch (screen) {
       case "RegisterScreen":
         return <RegisterScreen />;
       case "LoginScreen":
@@ -24,5 +37,18 @@ export default class App extends Component {
       default:
         return <div>Error</div>;
     }
+  };
+
+  render() {
+    return (
+      <div>
+        <Navbar
+          goRegister={this.goRegister}
+          goLogin={this.goLogin}
+          goHome={this.goHome}
+        />
+        {this.renderSwitch(this.state.currentScreen)}
+      </div>
+    );
   }
 }

@@ -37,6 +37,18 @@
   margin-top: 5px;
 }
 
+.column_banner {
+  background-color: lightgray;
+  padding: 3px;
+  color: black;
+  font-size: 14pt;
+  border-color: black;
+  border-width: 0px;
+  border-style: solid;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
 .form-group {
   font-size: 10pt;
   border-radius: 5px;

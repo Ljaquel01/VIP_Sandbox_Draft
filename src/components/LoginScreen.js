@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import "../css/style.css";
 import "../css/layout.css";
-import Navbar from "./Navbar";
 
 class LoginScreen extends Component {
   render() {
     return (
       <div style={{ textAlign: "center" }}>
-        <Navbar />
         <div style={{ display: "inline-block", width: "60%" }}>
           <div className="banner" style={{ marginTop: "60px" }}>
             <span>Wireframer</span>

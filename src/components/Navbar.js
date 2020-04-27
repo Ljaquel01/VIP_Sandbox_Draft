@@ -6,9 +6,9 @@ class Navbar extends Component {
   render() {
     return (
       <ul className="navbar">
-        <li className="navbar_item">First</li>
-        <li className="navbar_item">Second</li>
-        <li className="navbar_item">Third</li>
+        <li className="navbar_item" onClick={this.props.goHome}>Home</li>
+        <li className="navbar_item" onClick={this.props.goRegister}>Register</li>
+        <li className="navbar_item" onClick={this.props.goLogin}>Login</li>
         <li className="navbar_item" style={{ float: "right" }}>
           Account
         </li>
