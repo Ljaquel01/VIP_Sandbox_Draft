@@ -7,7 +7,7 @@ class RegisterScreen extends Component {
     return (
       <div style={{ textAlign: "center" }}>
         <div style={{ display: "inline-block", width: "60%" }}>
-          <div className="banner">
+          <div className="banner" style={{ marginTop: "60px" }}>
             <span>Wireframer</span>
             <br />
             <span style={{ fontSize: "20pt" }}>(Wolfie Tools Logo)</span>

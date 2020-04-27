@@ -1,6 +1,27 @@
-
 .row:after {
-content: "";
-display: table;
-clear: both;
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.tile {
+  float: left;
+  width: 120px;
+  height: 80px;
+  background-color: lightgray;
+  padding: 1px;
+  color: black;
+  font-size: 10pt;
+  border-color: lightgray;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  margin: 10px;
+}
+
+.tile_image {
+  width: 99%;
+  height: 80%;
+  background-color: white;
+  color: black;
 }

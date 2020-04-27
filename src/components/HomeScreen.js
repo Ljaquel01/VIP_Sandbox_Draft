@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../css/style.css";
 import "../css/layout.css";
+import Tile from "./Tile.js"
 
 class HomeScreen extends Component {
   render() {
@@ -17,11 +18,20 @@ class HomeScreen extends Component {
             <div className="column_banner">
               <span>Portfolio</span>
             </div>
+            
+            <Tile/>
+            <Tile/>
+            <Tile/>
+            <Tile/>
+
+            
           </div>
           <div class="column" style={{float: "right", width: "58%"}}>
             <div className="column_banner">
               <span>Community Wireframes</span>
             </div>
+            <Tile/>
+            <Tile/>
           </div>
         </div>
       </div>
