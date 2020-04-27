@@ -1,0 +1,62 @@
+.App {
+  text-align: center;
+}
+
+.navbar {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: none;
+  background-color: #333;
+  text-align: left;
+  border-radius: 5px;
+}
+
+.navbar_item {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.navbar_item:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+.banner {
+  background-color: blue;
+  padding: 5px;
+  color: white;
+  font-size: 30pt;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  margin-top: 5px;
+}
+
+.form-group {
+  font-size: 10pt;
+  border-radius: 5px;
+}
+
+.textfield {
+  font-size: 12pt;
+  border-radius: 5px;
+  flex: 1;
+  padding: 4px;
+  margin: 4px;
+}
+
+.submit_button {
+  font-size: 12pt;
+  padding: 5px;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.submit_button:hover {
+  cursor: pointer;
+}
