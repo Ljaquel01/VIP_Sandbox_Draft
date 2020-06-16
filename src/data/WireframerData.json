@@ -5,32 +5,6 @@
       "name": "Sample_W_01",
       "user": "User01",
       "lastModified": "",
-      "elements": [
-        {
-          "key": 0,
-          "type": "label",
-          "text": "",
-          "style": {
-            "width": "30px",
-            "height": "10px"
-          }
-        },
-        {
-          "key": 1,
-          "type": "button",
-          "text": "",
-          "style": {
-            "width": "80px",
-            "height": "30px"
-          }
-        }
-      ]
-    },
-    {
-      "key": 1,
-      "name": "Sample_W_02",
-      "user": "User02",
-      "lastModified": "",
       "elements": []
     }
   ]

@@ -19,7 +19,7 @@ class HomeScreen extends Component {
               <span>Portfolio</span>
             </div>
             <div style={{justifyContent: 'space-evenly'}}>
-              {this.props.wireframes.map((wireframe)=>( <Tile wireframe={wireframe} goEditor={this.props.goEditor} /> ))}
+              {this.props.wireframes.map((wireframe)=>( <Tile key= {wireframe.key} wireframe={wireframe} goEditor={this.props.goEditor} /> ))}
             </div>
           </div>
           <div className="column" style={{float: "right", width: "55%"}}>

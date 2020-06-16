@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "../css/style.css";
 import "../css/layout.css";
 
-class EditorScreen extends Component {
+export class EditorScreen extends Component {
   // render() {
   //   return (
   //     <div className="editor_row">
@@ -12,14 +12,15 @@ class EditorScreen extends Component {
   //     </div>
   //   );
   // }
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
-      //wireframe: this.props.wireframe,
       leftSideBarVisible: true,
       rightSideBarVisible: true,
       elementSelected: false,
-      elements: []
+      elements: this.props.currentWireframe.elements
+        ? this.props.currentWireframe.elements
+        : []
     };
     this.mouseInWorkSpace = false;
     this.shiftX = 0;
@@ -66,7 +67,7 @@ class EditorScreen extends Component {
 
       // Create the new element with the data
       let newElement = {
-        key: elements.length, // Need better method to ensure unique key (think when something gets deleted)
+        key: elements.length,
         left: parseInt(x, 10),
         top: parseInt(y, 10),
         ...data
@@ -81,16 +82,29 @@ class EditorScreen extends Component {
       }));
     } else {
       elements[this.state.elementSelected.key].left = parseInt(
-        event.pageX - bounds.left - this.shiftX, 10
+        event.pageX - bounds.left - this.shiftX,
+        10
       );
       elements[this.state.elementSelected.key].top = parseInt(
-        event.pageY - bounds.top - this.shiftY, 10
+        event.pageY - bounds.top - this.shiftY,
+        10
       );
       this.setState(state => ({
         ...state,
         elements: elements
       }));
     }
+
+    ////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
+    //Here I am trying to Update localStorage after drop
+    let temp = localStorage.getItem("wireframes");
+    temp = JSON.parse(temp);
+    temp[0].elements = this.state.elements;
+    temp = JSON.stringify(temp);
+    localStorage.setItem("wireframes", temp);
+    ////////////////////////////////////////////////////
+    ////////////////////////////////////////////////////
   };
 
   onDragoverHandler = e => {
