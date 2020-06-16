@@ -1,18 +1,40 @@
-.row:after {
-  content: "";
+.splash_row {
+  display: flex;
+}
+
+.splash_column {
+  flex: 50%;
+}
+
+.editor_row {
   display: table;
   clear: both;
 }
 
+.tools:after {
+  float: left;
+  width: 33%;
+}
+
+.wireframe:after {
+  float: left;
+  width: 33%;
+}
+
+.properties:after {
+  float: left;
+  width: 33%;
+}
+
 .tile {
   float: left;
-  width: 120px;
-  height: 80px;
-  background-color: lightgray;
+  width: 160px;
+  height: 110px;
+  background-color: white;
   padding: 1px;
   color: black;
   font-size: 10pt;
-  border-color: lightgray;
+  border-color: rgb(41, 127, 184);
   border-width: 1px;
   border-style: solid;
   border-radius: 3px;
@@ -20,8 +42,95 @@
 }
 
 .tile_image {
-  width: 99%;
+  background-color: rgb(41, 127, 184);
+  position: relative;
+  width: 100%;
   height: 80%;
-  background-color: white;
-  color: black;
+}
+
+.tile_image_content {
+  position: relative;
+  top: 0px;
+  width: 100%;
+  height: 98%;
+}
+
+body > #root > div {
+  height: 90vh;
+}
+
+.workspace_wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: inherit;
+}
+
+.edit_workspace {
+  width: 70%;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar {
+  background-color: lightgray;
+  width: 15%;
+  height: 100%;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+#left_sidebar {
+  border-width: 0 1px 0 0;
+}
+
+#right_sidebar {
+  border-width: 0 0 0 1px;
+}
+
+.sidebar_nub {
+  top: 0;
+  bottom: 0;
+  width: 15px;
+  height: 50px;
+  background-color: darkgray;
+  border-style: solid;
+}
+
+.sidebar_nub:hover {
+  cursor: pointer;
+}
+
+#left_sidebar_nub {
+  border-radius: 0 5px 5px 0;
+  border-width: 1px 2px 1px 0;
+}
+
+#right_sidebar_nub {
+  border-radius: 5px 0 0 5px;
+  border-width: 1px 0 1px 2px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.box {
+  background-color: blue;
+  height: 50px;
+  width: 50px;
+}
+
+.grabbable:hover {
+  cursor: grab;
+}
+
+.grabbable:active {
+  cursor: grabbing !important;
 }

@@ -13,25 +13,19 @@ class HomeScreen extends Component {
             <span style={{ fontSize: "10px" }}>by Wolfie Tools</span>
           </div>
         </div>
-        <div class="row">
-          <div class="column" style={{float: "left", width: "38%"}}>
+        <div className="row">
+          <div className="column" style={{float: "left", width: "41%"}}>
             <div className="column_banner">
               <span>Portfolio</span>
             </div>
-            
-            <Tile/>
-            <Tile/>
-            <Tile/>
-            <Tile/>
-
-            
-          </div>
-          <div class="column" style={{float: "right", width: "58%"}}>
-            <div className="column_banner">
-              <span>Community Wireframes</span>
+            <div style={{justifyContent: 'space-evenly'}}>
+              {this.props.wireframes.map((wireframe)=>( <Tile wireframe={wireframe} goEditor={this.props.goEditor} /> ))}
             </div>
-            <Tile/>
-            <Tile/>
+          </div>
+          <div className="column" style={{float: "right", width: "55%"}}>
+            <div className="column_banner">
+              <span>Community Templates</span>
+            </div>
           </div>
         </div>
       </div>

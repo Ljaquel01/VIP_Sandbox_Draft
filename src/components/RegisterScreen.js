@@ -9,8 +9,6 @@ class RegisterScreen extends Component {
         <div style={{ display: "inline-block", width: "60%" }}>
           <div className="banner" style={{ marginTop: "60px" }}>
             <span>Wireframer</span>
-            <br />
-            <span style={{ fontSize: "20pt" }}>(Wolfie Tools Logo)</span>
           </div>
           <h1>Register</h1>
           <form style={{ textAlign: "left", paddingInline: "50px" }}>
@@ -35,7 +33,9 @@ class RegisterScreen extends Component {
               <input className="textfield" type="text" placeholder="Password" />
             </div>
           </form>
-          <button className="submit_button">Submit</button>
+          <button className="submit_button" onClick={this.props.toggleLoggedIn}>Submit</button>
+          <button className="submit_button" onClick={this.props.toggleLoginOption}>
+            Already have an account? Login here!</button>
         </div>
       </div>
     );
