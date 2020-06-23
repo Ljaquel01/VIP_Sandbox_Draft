@@ -4,13 +4,13 @@ import "./css/layout.css";
 import HomeScreen from "./components/HomeScreen";
 import Navbar from "./components/Navbar";
 import SplashScreen from "./components/SplashScreen";
-import EditorScreen from "./components/EditorScreen";
+import EditorScreen from "./components/Editing/EditorScreen";
 import WireframerData from "./data/WireframerData.json";
 
 export default class App extends Component {
   constructor() {
     super();
-    //localStorage.clear()
+    // localStorage.clear();
     let wireframes = localStorage.getItem("wireframes");
     if (!wireframes) {
       wireframes = JSON.stringify(WireframerData.wireframes);
