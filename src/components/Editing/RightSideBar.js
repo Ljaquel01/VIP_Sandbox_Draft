@@ -36,7 +36,8 @@ export class RightSideBar extends Component {
               />
             </div>
 
-            <div className="field">
+            {elementSelected.backgroundColor ? (
+              <div className="field">
               Background Color:
               <input
                 type="color"
@@ -50,7 +51,7 @@ export class RightSideBar extends Component {
                 }
               />
             </div>
-
+            ) : null }
             {elementSelected.borderStyle ? (
               <div className="field">
                 Border Width:
@@ -288,6 +289,7 @@ export class RightSideBar extends Component {
               />
             </div>
             <button onClick={this.props.deleteElement}>Delete element</button>
+            <button onClick={this.props.duplicateElement}>Duplicate</button>
             <button
               onClick={() => this.props.moveElement(elementSelected.key + 1)}
             >
