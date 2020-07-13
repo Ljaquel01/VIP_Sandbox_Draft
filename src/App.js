@@ -32,6 +32,15 @@ export default class App extends Component {
   goHome = () => {
     this.setState({ currentScreen: "Home", currentWireframe: null });
   };
+  save = () => {
+    let temp = localStorage.getItem("wireframes");
+    temp = JSON.parse(temp);
+    console.log(temp)
+    console.log(this.state.currentWireframe.elements)
+    temp[0].elements = this.state.currentWireframe.elements;
+    temp = JSON.stringify(temp);
+    localStorage.setItem("wireframes", temp);
+  };
   goEditor = () => {
     this.setState({
       currentScreen: "EditorScreen",
@@ -66,8 +75,10 @@ export default class App extends Component {
       <div>
         <Navbar
           goHome={this.goHome}
+          save={this.save}
           loggedIn={this.state.loggedIn}
           toggleLoggedIn={this.toggleLoggedIn}
+          currentWireframe={this.state.currentWireframe}
         />
         {this.renderSwitch(this.state.currentScreen)}
       </div>
